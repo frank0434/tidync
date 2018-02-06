@@ -41,12 +41,18 @@ out <- tibble::as_tibble(lapply(slabs, as.vector))
   
   prod_dims <- 1
   trans <- x[["transforms"]][x[["dimension"]][["active"]]]
+  ns <- x$ns
+  
   for (i in seq_along(trans)) {
     nm <- names(trans)[i]
     nr <- sum(trans[[i]]$selected)
     out[[nm]] <- rep(dplyr::filter(trans[[nm]], .data$selected)[[nm]], each = prod_dims, length.out = total_prod)
     prod_dims <- prod_dims * nr
   }
-  if (na.rm) out <- dplyr::filter(out, !all_na)
+  
+  if (na.rm) {
+    out <- dplyr::filter(out, !all_na)
+  }
+  
  out
 }
