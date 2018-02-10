@@ -3,6 +3,7 @@
 #' @param .data tidync object
 #' @export
 #' @name filter
+#' @importFrom dplyr filter
 filter.tidync <- function(.data, ...) {
   hyper_filter(.data, ...)
 }
@@ -31,8 +32,9 @@ as.tbl_cube.tidync <- function(x, ...) {
 #' 
 #' Convert a tidync object to a tibble (data frame). 
 #' @param x dplyr object
-#' @inheritDotParams dplyr::as_tibble 
+#' @param ... 
 as_tibble.tidync <- function(x, ..., na.rm = TRUE) {
   hyper_tibble(x, ..., na.rm = na.rm)
 }
+
 

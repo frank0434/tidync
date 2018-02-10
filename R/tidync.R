@@ -48,6 +48,7 @@ tidync.character <- function(x, what, ...) {
   fexists <- file.exists(x)
   
   if (!fexists) cat(sprintf("not a file: \n' %s '\n\n... attempting remote connection\n", x))
+  
   safemeta <- purrr::safely(ncmeta::nc_meta)
   meta <- safemeta(x)
   if (is.null(meta$result)) {
