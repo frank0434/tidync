@@ -1,3 +1,4 @@
+
 #' hyper slice
 #' 
 #' Extract the raw array data for the active grid, as a list of arrays. This can be the
@@ -41,7 +42,7 @@ hyper_slice.tidync <- function(x, select_var = NULL, ..., raw_datavals = FALSE, 
   ## dimension order must be same as axis
   START <- dimension$start
   COUNT <- dimension$count
- # browser()
+
   if (is.null(select_var))   {
     varnames <- variable %>% dplyr::pull(.data$name)
   } else {

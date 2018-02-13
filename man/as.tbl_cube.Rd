@@ -5,7 +5,7 @@
 \alias{as.tbl_cube.tidync}
 \title{Dplyr 'tbl' cubes}
 \usage{
-as.tbl_cube.tidync(x, ...)
+\method{as.tbl_cube}{tidync}(x, ...)
 }
 \arguments{
 \item{x}{tidync object}
