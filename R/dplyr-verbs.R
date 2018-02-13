@@ -4,6 +4,8 @@
 #' @export
 #' @name filter
 #' @importFrom dplyr filter
+#' @export
+#' @export filter
 filter.tidync <- function(.data, ...) {
   hyper_filter(.data, ...)
 }
@@ -13,9 +15,9 @@ filter.tidync <- function(.data, ...) {
 #' Slice out a "hyper" array, returning a list of variables in native 
 #' array form. 
 #' @inheritParams hyper_slice
-#' 
+#' @export
 hyper_array <- function(x, select_var = NULL, ..., raw_datavals = FALSE, force = FALSE) {
-  hyper_slice(x, select_var = select_vart, ..., raw_datavals = raw_datavals, force = force)
+  hyper_slice(x, select_var = select_var, ..., raw_datavals = raw_datavals, force = force)
 }
 
 #' Dplyr 'tbl' cubes
@@ -24,6 +26,9 @@ hyper_array <- function(x, select_var = NULL, ..., raw_datavals = FALSE, force =
 #' @param x tidync object
 #' @inheritDotParams dplyr::as.tbl_cube
 #' @name as.tbl_cube
+#' @importFrom dplyr as.tbl_cube
+#' @export as.tbl_cube
+#' @export
 as.tbl_cube.tidync <- function(x, ...) {
   hyper_tbl_cube(x, ...)  
 }
@@ -33,6 +38,7 @@ as.tbl_cube.tidync <- function(x, ...) {
 #' Convert a tidync object to a tibble (data frame). 
 #' @param x dplyr object
 #' @param ... 
+#' @export
 as_tibble.tidync <- function(x, ..., na.rm = TRUE) {
   hyper_tibble(x, ..., na.rm = na.rm)
 }
