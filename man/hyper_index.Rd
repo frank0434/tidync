@@ -13,8 +13,7 @@ hyper_index(x, ..., select_var = NULL, raw_datavals = FALSE)
 \method{hyper_index}{character}(x, ..., select_var = NULL,
   raw_datavals = FALSE)
 
-\method{hyper_index}{tidync}(x, ..., select_var = NULL,
-  raw_datavals = FALSE)
+\method{hyper_index}{tidync}(x, ...)
 }
 \arguments{
 \item{x}{tidync object}
@@ -25,7 +24,11 @@ hyper_index(x, ..., select_var = NULL, raw_datavals = FALSE)
 
 \item{raw_datavals}{logical to control whether scaling in the NetCDF is applied or not}
 }
+\value{
+tidync object
+}
 \description{
 Perform a traditional unnamed array slice operation. This assumes that
-no previous selection has been made.
+no previous selection has been made. This is a lazy verb, we still need
+hyper_array or collect to actuall pull the data.
 }

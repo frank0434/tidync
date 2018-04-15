@@ -2,9 +2,13 @@
 % Please edit documentation in R/dplyr-verbs.R
 \name{as.tbl_cube}
 \alias{as.tbl_cube}
+\alias{as.tbl_cube.tidync_array}
+\alias{as.tbl_cube}
 \alias{as.tbl_cube.tidync}
 \title{Dplyr 'tbl' cubes}
 \usage{
+\method{as.tbl_cube}{tidync_array}(x, ...)
+
 \method{as.tbl_cube}{tidync}(x, ...)
 }
 \arguments{
